@@ -10,16 +10,16 @@
         </picture>
     </div>
 
-    <div class="p-5">
+    <div class="p-5 right-side">
         <h5 class="text-center mb-5">{% block card_title %}{% endblock %}</h5>
         {% block form %}{% endblock %}
         <div class="or my-4 opacity-50">
             <span class="or-text">or</span>
         </div>
-        <div class="small-font opacity-75">
+        <div class="small-font opacity-75 text-center">
             {% block auth_footer %}{% endblock %}
 
-            <div class="mt-4 text-center">
+            <div class="mt-4">
                 <a href="{{ path('app_homepage') }}" class="secondary-link">Back to the Homepage</a>
             </div>
         </div>
