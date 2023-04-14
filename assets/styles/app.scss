@@ -25,4 +25,12 @@ html, body {
     box-shadow: 0 0 3px 3px var(--shadow-color);
 }
 
+.secondary-link {
+    color: var(--bs-secondary-color);
+
+    &:hover {
+        color: var(--bs-body-color);
+    }
+}
+
 @import "./auth";
