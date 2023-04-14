@@ -8,11 +8,9 @@
     </div>
 
     <div class="p-4">
-        <h5 class="text-center">{% block card_title %}{% endblock %}</h5>
-        <div class="my-5">
-            {% block form %}{% endblock %}
-        </div>
-        <div class="or my-4 opacity-50">
+        <h5 class="text-center mb-5">{% block card_title %}{% endblock %}</h5>
+        {% block form %}{% endblock %}
+        <div class="or my-5 opacity-50">
             <span class="or-text">or</span>
         </div>
         <div class="small-font opacity-75">

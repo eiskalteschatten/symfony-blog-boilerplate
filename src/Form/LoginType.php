@@ -18,7 +18,9 @@ class LoginType extends AbstractType
             ->add('password', PasswordType::class, [
                 'mapped' => false,
             ])
-            ->add('save', SubmitType::class)
+            ->add('logIn', SubmitType::class, [
+                'attr' => ['class' => ' btn-primary mt-3 w-100'],
+            ])
         ;
     }
 
