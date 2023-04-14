@@ -15,7 +15,9 @@ class LoginType extends AbstractType
     {
         $builder
             ->add('user_name', TextType::class)
-            ->add('password', PasswordType::class)
+            ->add('password', PasswordType::class, [
+                'mapped' => false,
+            ])
             ->add('save', SubmitType::class)
         ;
     }
