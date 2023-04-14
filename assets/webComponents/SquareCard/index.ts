@@ -1,3 +1,5 @@
+import './SquareCard.scss';
+
 class SquareCard extends HTMLElement {
     constructor() {
         super();
