@@ -9,9 +9,6 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-use App\Entity\Login;
-use App\Form\LoginFormType;
-
 class LoginController extends AbstractController
 {
     #[Route('/login', name: 'app_login')]
@@ -20,13 +17,9 @@ class LoginController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        $login = new Login();
-        $login->setUsername($lastUsername);
-        $form = $this->createForm(LoginFormType::class, $login);
-
         return $this->render('auth/login.html.twig', [
             'controller_name' => 'LoginController',
-            'loginForm' => $form,
+            'last_username' => $lastUsername
         ]);
     }
 }

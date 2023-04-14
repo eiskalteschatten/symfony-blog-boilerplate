@@ -4,16 +4,23 @@
 {% block card_title %}Welcome to the Blog!{% endblock %}
 
 {% block form %}
-{{ form_start(loginForm) }}
-    {{ form_row(loginForm.username) }}
-    {{ form_row(loginForm.plainPassword, {
-        label: 'Password'
-    }) }}
+<form action="{{ path('app_login') }}" method="post">
+    <div class="mb-3">
+        <label for="username" class="form-label required">Username</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label required">Password</label>
+        <input type="password" id="password" name="_password" required="required" class="form-control">
+    </div>
+
+    {# If you want to control the URL the user is redirected to on success
+    <input type="hidden" name="_target_path" value="/account"> #}
 
     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
     <button type="submit" class="btn btn-primary mt-3 w-100">Log In</button>
-{{ form_end(loginForm) }}
+</form>
 {% endblock %}
 
 {% block auth_footer %}
