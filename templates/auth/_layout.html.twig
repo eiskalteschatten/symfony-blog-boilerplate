@@ -2,12 +2,15 @@
 
 {% block body %}
 <div class="auth-form d-flex justify-content-center align-items-center mt-5 h-100 w-100">
-  <square-card class="d-flex">
-    <div class="d-none d-lg-block">
-        image here
+  <square-card class="d-flex align-items-center">
+    <div class="d-none d-lg-block p-5 left-side">
+        <picture>
+            <source srcSet="{{ asset('images/icon-monotone-black.svg') }}" media='(prefers-color-scheme: dark)' />
+            <img src="{{ asset('images/icon-monotone-white.svg') }}" />
+        </picture>
     </div>
 
-    <div class="p-4">
+    <div class="p-5">
         <h5 class="text-center mb-5">{% block card_title %}{% endblock %}</h5>
         {% block form %}{% endblock %}
         <div class="or my-5 opacity-50">

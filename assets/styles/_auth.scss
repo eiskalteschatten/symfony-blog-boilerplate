@@ -1,4 +1,9 @@
 .auth-form {
+    .left-side {
+        background-color: var(--opposite-bg);
+        width: 500px;
+    }
+
     .or {
         text-align: center;
         position: relative;

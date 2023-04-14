@@ -1,9 +1,13 @@
+@import "./variables";
+
 :root {
+    --opposite-bg: #{$darkBg};
     --shadow-color: #00000010;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
+        --opposite-bg: #{$lightBg};
         --shadow-color: #00000010;
     }
 }
