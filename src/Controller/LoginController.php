@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 use App\Entity\Login;
-use App\Form\LoginType;
+use App\Form\LoginFormType;
 
 class LoginController extends AbstractController
 {
@@ -17,7 +17,7 @@ class LoginController extends AbstractController
     public function login(): Response
     {
         $login = new Login();
-        $form = $this->createForm(LoginType::class, $login);
+        $form = $this->createForm(LoginFormType::class, $login);
 
         return $this->render('auth/login.html.twig', [
             'controller_name' => 'LoginController',
