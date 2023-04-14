@@ -2,9 +2,14 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 class Login
 {
+    #[Assert\NotBlank]
     protected $username;
+
+    #[Assert\NotBlank]
     protected $password;
 
     public function getUsername(): ?string
