@@ -4,7 +4,16 @@
 {% block card_title %}Welcome to the Blog!{% endblock %}
 
 {% block form %}
-{{ form(form) }}
+{{ form_start(loginForm) }}
+    {{ form_row(loginForm.username) }}
+    {{ form_row(loginForm.plainPassword, {
+        label: 'Password'
+    }) }}
+
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+    <button type="submit" class="btn btn-primary mt-3 w-100">Log In</button>
+{{ form_end(loginForm) }}
 {% endblock %}
 
 {% block auth_footer %}
