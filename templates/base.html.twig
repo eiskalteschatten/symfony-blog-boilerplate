@@ -9,7 +9,7 @@
         {% set page_title = 'Blog' %}
         <title>
             {% if block('title') is defined %}
-                {{ block('title')|raw }} | {{ page_title }}
+                {{ block('title') | raw }} | {{ page_title }}
             {% else %}
                 {{ page_title }}
             {% endif %}
