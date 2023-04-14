@@ -1,12 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="d-flex justify-content-center mt-5">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">{% block card_title %}{% endblock %}</h5>
-      {% block form %}{% endblock %}
+<div class="auth-form d-flex justify-content-center align-items-center mt-5 h-100 w-100">
+  <square-card class="d-flex">
+    <div class="d-none d-lg-block">
+        image here
     </div>
-  </div>
+
+    <div class="p-4">
+        <h5 class="text-center">{% block card_title %}{% endblock %}</h5>
+        <div class="my-5">
+            {% block form %}{% endblock %}
+        </div>
+        <div class="or my-4 opacity-50">
+            <span class="or-text">or</span>
+        </div>
+        <div class="small-font opacity-75">
+            {% block auth_footer %}{% endblock %}
+        </div>
+    </div>
+  </square-card>
 </div>
 {% endblock %}

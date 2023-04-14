@@ -1,17 +1,12 @@
 {% extends 'auth/_layout.html.twig' %}
 
 {% block title %}Login{% endblock %}
-
-{% block card_title %}
-Login
-{% endblock %}
+{% block card_title %}Login{% endblock %}
 
 {% block form %}
-<div class="my-3">
-    {{ form(form) }}
-</div>
+{{ form(form) }}
+{% endblock %}
 
-<div class="small-font">
-    Don't have an account yet? <a href="{{ path('app_register') }}">Register</a>
-</div>
+{% block auth_footer %}
+Don't have an account yet? <a href="{{ path('app_register') }}">Create an Account</a>
 {% endblock %}
