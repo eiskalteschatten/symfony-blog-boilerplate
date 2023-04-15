@@ -1,17 +1,21 @@
 {% extends 'auth/_layout.html.twig' %}
 
-{% block title %}{% trans %}Login{% endtrans %}{% endblock %}
-{% block card_title %}{% trans %}Welcome to the Blog!{% endtrans %}{% endblock %}
+{% block title %}{% trans from 'security' %}Login{% endtrans %}{% endblock %}
+{% block card_title %}{% trans from 'security' %}Welcome to the Blog!{% endtrans %}{% endblock %}
 
 {% block form %}
+{% if error %}
+    <div class="alert alert-danger" role="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
 <form action="{{ path('app_login') }}" method="post">
     <div class="mb-3">
-        <label for="username" class="form-label required">{% trans %}Username{% endtrans %}</label>
+        <label for="username" class="form-label required">{% trans from 'security' %}Username{% endtrans %}</label>
         <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control">
     </div>
 
     <div class="mb-3">
-        <label for="password" class="form-label required">{% trans %}Password{% endtrans %}</label>
+        <label for="password" class="form-label required">{% trans from 'security' %}Password{% endtrans %}</label>
         <input type="password" id="password" name="_password" required="required" class="form-control">
     </div>
 
@@ -19,10 +23,10 @@
     <input type="hidden" name="_target_path" value="/account"> #}
 
     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-    <button type="submit" class="btn btn-primary mt-3 w-100">{% trans %}Log In{% endtrans %}</button>
+    <button type="submit" class="btn btn-primary mt-3 w-100">{% trans from 'security' %}Log In{% endtrans %}</button>
 </form>
 {% endblock %}
 
 {% block auth_footer %}
-{% trans %}Don't have an account yet?{% endtrans %} <a href="{{ path('app_register') }}">{% trans %}Create an Account{% endtrans %}</a>
+{% trans from 'security' %}Don't have an account yet?{% endtrans %} <a href="{{ path('app_register') }}">{% trans from 'security' %}Create an Account{% endtrans %}</a>
 {% endblock %}

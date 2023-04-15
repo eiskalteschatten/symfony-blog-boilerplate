@@ -1,15 +1,16 @@
 {% extends 'auth/_layout.html.twig' %}
 
-{% block title %}{% trans %}Create an Account{% endtrans %}{% endblock %}
-{% block card_title %}{% trans %}Create an Account{% endtrans %}{% endblock %}
+{% block title %}{% trans from 'security' %}Create an Account{% endtrans %}{% endblock %}
+{% block card_title %}{% trans from 'security' %}Create an Account{% endtrans %}{% endblock %}
 
 {% block form %}
 {% for flash_error in app.flashes('verify_email_error') %}
     <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
 {% endfor %}
+
 {{ form(registrationForm) }}
 {% endblock %}
 
 {% block auth_footer %}
-{% trans %}Already have an account?{% endtrans %} <a href="{{ path('app_login') }}">{% trans %}Log In{% endtrans %}</a>
+{% trans from 'security' %}Already have an account?{% endtrans %} <a href="{{ path('app_login') }}">{% trans from 'security' %}Log In{% endtrans %}</a>
 {% endblock %}
