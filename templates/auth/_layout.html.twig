@@ -14,13 +14,13 @@
         <h5 class="text-center mb-5">{% block card_title %}{% endblock %}</h5>
         {% block form %}{% endblock %}
         <div class="or my-4 opacity-50">
-            <span class="or-text">or</span>
+            <span class="or-text">{% trans %}or{% endtrans %}</span>
         </div>
         <div class="small-font opacity-75 text-center">
             {% block auth_footer %}{% endblock %}
 
             <div class="mt-4">
-                <a href="{{ path('app_homepage') }}" class="secondary-link">Back to the Homepage</a>
+                <a href="{{ path('app_homepage') }}" class="secondary-link">{% trans %}Back to the Homepage{% endtrans %}</a>
             </div>
         </div>
     </div>
