@@ -1,8 +1,7 @@
-{% extends 'base.html.twig' %}
+{% extends '_layouts/centered_square_card.html.twig' %}
 
-{% block body %}
-<div class="auth-form d-flex justify-content-center align-items-center h-100 w-100">
-  <square-card class="d-flex align-items-stretch">
+{% block card_content %}
+<div class="auth-form h-100 w-100 d-flex">
     <div class="d-none d-lg-flex align-items-center justify-content-center left-side">
         <picture>
             <source srcSet="{{ asset('images/icon-monotone-black.svg') }}" media='(prefers-color-scheme: dark)'>
@@ -24,6 +23,5 @@
             </div>
         </div>
     </div>
-  </square-card>
 </div>
 {% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="d-flex justify-content-center align-items-center h-100 w-100">
+  <square-card>
+    {% block card_content %}{% endblock %}
+  </square-card>
+</div>
+{% endblock %}
