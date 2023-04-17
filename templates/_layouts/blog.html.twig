@@ -19,7 +19,12 @@
 
     <div class="right-side d-flex">
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-            <button class="btn-icon"><i class="bi bi-person-circle"></i></button>
+            <button class="btn-icon" data-bs-toggle="dropdown"><i class="bi bi-person-circle"></i></button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">{% trans from 'security' %}My Account{% endtrans %}</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{ path('app_logout') }}">{% trans from 'security' %}Log Out{% endtrans %}</a></li>
+            </ul>
         {% else %}
             <a href="{{ path('app_login') }}" class="btn btn-outline-secondary btn-sm">{% trans from 'security' %}Login{% endtrans %}</a>
             <a href="{{ path('app_register') }}" class="btn btn-primary btn-sm">{% trans from 'security' %}Register{% endtrans %}</a>
