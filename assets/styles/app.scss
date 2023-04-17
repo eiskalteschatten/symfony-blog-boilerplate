@@ -29,6 +29,33 @@ html, body {
     gap: 15px;
 }
 
+.btn-icon {
+    border: none;
+    border-radius: 50%;
+    color: var(--bs-body-color);
+    background-color: transparent;
+    transition: background-color 250ms;
+    font-size: 20px;
+    height: 35px;
+    width: 35px;
+
+    &:hover {
+        background-color: var(--bs-gray-300);
+
+        @media (prefers-color-scheme: dark) {
+            background-color: var(--bs-gray-dark);
+        }
+    }
+
+    &:focus {
+        background-color: var(--bs-gray-500);
+
+        @media (prefers-color-scheme: dark) {
+            background-color: var(--bs-gray);
+        }
+    }
+}
+
 .secondary-link {
     color: var(--bs-secondary-color);
 

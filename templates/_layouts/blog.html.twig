@@ -18,8 +18,12 @@
     </div>
 
     <div class="right-side d-flex">
-        <a href="{{ path('app_login') }}" class="btn btn-outline-secondary btn-sm">{% trans from 'security' %}Login{% endtrans %}</a>
-        <a href="{{ path('app_register') }}" class="btn btn-primary btn-sm">{% trans from 'security' %}Register{% endtrans %}</a>
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <button class="btn-icon"><i class="bi bi-person-circle"></i></button>
+        {% else %}
+            <a href="{{ path('app_login') }}" class="btn btn-outline-secondary btn-sm">{% trans from 'security' %}Login{% endtrans %}</a>
+            <a href="{{ path('app_register') }}" class="btn btn-primary btn-sm">{% trans from 'security' %}Register{% endtrans %}</a>
+        {% endif %}
     </div>
 </div>
 {% endblock toolbar %}
