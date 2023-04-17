@@ -35,7 +35,9 @@
         </script>
     </head>
     <body>
+        {% block toolbar %}{% endblock %}
         {% block body %}{% endblock %}
+        {% block footer %}{% endblock %}
 
         {% block javascripts_body_end %}
             {{ encore_entry_script_tags('bootstrap') }}

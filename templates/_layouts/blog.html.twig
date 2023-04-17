@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block toolbar %}
+<div class="toolbar d-flex align-items-center justify-content-between p-2">
+    <div class="left-side d-flex align-items-center standard-gap">
+        <picture>
+            <source srcSet="{{ asset('images/icon-monotone-white.svg') }}" media='(prefers-color-scheme: dark)'>
+            <img src="{{ asset('images/icon-monotone-black.svg') }}" class="logo-image">
+        </picture>
+
+        <div class="logo-text">
+            Blog
+        </div>
+
+        <nav class="main-menu ms-3">
+            main menu here
+        </nav>
+    </div>
+
+    <div class="right-side d-flex">
+        <a href="{{ path('app_login') }}" class="btn btn-outline-secondary btn-sm">{% trans from 'security' %}Login{% endtrans %}</a>
+        <a href="{{ path('app_register') }}" class="btn btn-primary btn-sm">{% trans from 'security' %}Register{% endtrans %}</a>
+    </div>
+</div>
+{% endblock toolbar %}
+
+{% block footer %}
+
+{% endblock footer %}

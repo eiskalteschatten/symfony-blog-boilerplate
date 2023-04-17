@@ -1,0 +1,17 @@
+.toolbar {
+    box-shadow: 0 0 5px 3px var(--shadow-color);
+
+    .left-side {
+        .logo-image {
+            height: 50px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+        }
+    }
+
+    .right-side {
+        gap: 10px;
+    }
+}

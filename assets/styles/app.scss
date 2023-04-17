@@ -25,6 +25,10 @@ html, body {
     box-shadow: 0 0 3px 3px var(--shadow-color);
 }
 
+.standard-gap {
+    gap: 15px;
+}
+
 .secondary-link {
     color: var(--bs-secondary-color);
 
@@ -33,4 +37,5 @@ html, body {
     }
 }
 
+@import "./header";
 @import "./security";
