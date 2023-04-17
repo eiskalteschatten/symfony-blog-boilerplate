@@ -1,5 +1,11 @@
 {% extends '_layouts/centered_square_card.html.twig' %}
 
+{% block title %}
+{% trans from 'security' %}
+    Your email address has successfully been verified!
+{% endtrans %}
+{% endblock %}
+
 {% block card_content %}
     <div class="d-flex flex-column align-items-center p-5 verification-page">
         <div class="icon mb-3 text-success">
