@@ -18,6 +18,10 @@
     </div>
 
     <div class="right-side d-flex">
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('app_admin') }}" class="btn-icon"><i class="bi bi-sliders"></i></a>
+        {% endif %}
+
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
             <button class="btn-icon" data-bs-toggle="dropdown"><i class="bi bi-person-circle"></i></button>
             <ul class="dropdown-menu">

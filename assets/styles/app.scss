@@ -38,6 +38,10 @@ html, body {
     font-size: 20px;
     height: 35px;
     width: 35px;
+    line-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
         background-color: var(--bs-gray-300);
