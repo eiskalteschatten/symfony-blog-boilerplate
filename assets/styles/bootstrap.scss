@@ -2,6 +2,11 @@
 
 // $primary: darken(#428bca, 20%);
 $body-bg-dark: $darkBg;
+$enable-shadows: true;
+
+// Dropdowns
+$dropdown-border-width: 0px;
+$dropdown-box-shadow: 0 0 5px 3px var(--shadow-color);
 
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons";
